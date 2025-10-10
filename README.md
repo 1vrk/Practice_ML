@@ -1,4 +1,5 @@
 Testovoye
 Задания:
-1. sql+python (Не забыть отправить сюда)
-2. python+fastAPI+docker
+1. sql+python - the_first_one
+2. python+fastAPI+docker - pythonProject4
+   
