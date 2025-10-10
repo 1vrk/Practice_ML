@@ -1,3 +1,4 @@
+import models
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
@@ -71,7 +72,7 @@ class ClientData(BaseModel):
     Change_In_ATM_TR: float = 0.5
 
 
-model = joblib.load("best_churn_model.pkl")
+model = joblib.load("models/best_churn_model.pkl")
 
 @app.post("/predict")
 def predict_churn(data: ClientData):
