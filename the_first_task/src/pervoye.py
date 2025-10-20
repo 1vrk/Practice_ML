@@ -1,8 +1,7 @@
 import pandas as pd
 import chardet
 import warnings
-import pymysql
-from sqlalchemy import create_engine, text
+
 
 warnings.filterwarnings('ignore')
 
@@ -15,14 +14,14 @@ def analyze_file(filename):
         try:
             df_sample = pd.read_csv(filename, sep=sep, encoding=encoding)
             print(df_sample.head())
-            df_sample.to_csv('data_prep.csv', index=False)
+            df_sample.to_csv('../data/data_prep.csv', index=False)
         except:
             continue
 
 
-analyze_file('data_prep.tab')
+analyze_file('../data/data_prep.tab')
 
-df = pd.read_csv('data_prep.csv')
+df = pd.read_csv('../data/data_prep.csv')
 print(df)
 
 df['AVG_LATENCY'].fillna(df['AVG_LATENCY'].median(), inplace = True)
